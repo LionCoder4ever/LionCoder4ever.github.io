@@ -1,0 +1,694 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="前言为了配合运营和市场伙伴的工作,app中一些模块或界面需要频繁变动。  
+于Android，可以使用webview,  热更新和rn等方法。
+其中webview  较为常规, 但加载速度很慢(好讨厌的感觉),
+热更新还没接触(部分大厂在用),rn的话看起来很美（facebook出品,github
+ star多）,所以我选择rn进行尝试，此文是我集成rn的一个总结。
+android项目配置预设读者">
+<meta property="og:type" content="article">
+<meta property="og:title" content="已有android项目集成react-native">
+<meta property="og:url" content="https://lioncoder4ever.github.io/2016/09/13/已有android项目集成react-native/index.html">
+<meta property="og:site_name" content="小佳佳和我的blog">
+<meta property="og:description" content="前言为了配合运营和市场伙伴的工作,app中一些模块或界面需要频繁变动。  
+于Android，可以使用webview,  热更新和rn等方法。
+其中webview  较为常规, 但加载速度很慢(好讨厌的感觉),
+热更新还没接触(部分大厂在用),rn的话看起来很美（facebook出品,github
+ star多）,所以我选择rn进行尝试，此文是我集成rn的一个总结。
+android项目配置预设读者">
+<meta property="og:updated_time" content="2016-09-13T05:22:33.813Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="已有android项目集成react-native">
+<meta name="twitter:description" content="前言为了配合运营和市场伙伴的工作,app中一些模块或界面需要频繁变动。  
+于Android，可以使用webview,  热更新和rn等方法。
+其中webview  较为常规, 但加载速度很慢(好讨厌的感觉),
+热更新还没接触(部分大厂在用),rn的话看起来很美（facebook出品,github
+ star多）,所以我选择rn进行尝试，此文是我集成rn的一个总结。
+android项目配置预设读者">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://lioncoder4ever.github.io/2016/09/13/已有android项目集成react-native/"/>
+
+  <title> 已有android项目集成react-native | 小佳佳和我的blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">小佳佳和我的blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                已有android项目集成react-native
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-13T11:33:12+08:00" content="2016-09-13">
+              2016-09-13
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><pre><code>为了配合运营和市场伙伴的工作,app中一些模块或界面需要频繁变动。  
+于Android，可以使用webview,  热更新和rn等方法。
+其中webview  较为常规, 但加载速度很慢(好讨厌的感觉),
+热更新还没接触(部分大厂在用),rn的话看起来很美（facebook出品,github
+ star多）,所以我选择rn进行尝试，此文是我集成rn的一个总结。
+</code></pre><h2 id="android项目配置"><a href="#android项目配置" class="headerlink" title="android项目配置"></a>android项目配置</h2><pre><code>预设读者已经成功配置rn，as,并熟悉as工程下文件目录，遇到问题可以google。
+1. 新建文件夹，命名为androidwithreact
+2. 进入androidwithreact文件夹，新建android文件夹
+3. 将原有的android项目复制到android文件夹下
+4. 修改android/build.gradle文件,配置rn版本
+</code></pre><p><code>allprojects {
+    repositories {
+        jcenter()
+        mavenLocal()
+        maven {
+            url &quot;$rootDir/../node_modules/react-native/android&quot;
+            }
+        }
+    }</code></p>
+<pre><code>5. 修改app(module)下build.gradle 在dependencies中添加
+</code></pre><p><code>compile &#39;com.facebook.react:react-native:+&#39;</code></p>
+<pre><code>6. 在manifest文件中添加一下代码方便进入开发者模式
+</code></pre><p><code>&lt;activity android:name=&quot;com.facebook.react.devsupport.DevSettingsActivity&quot; /&gt;</code></p>
+<pre><code>7. 新建activity作为rn呈现的载体（个人理解）
+public class ReactActivity extends AppCompatActivity implements DefaultHardwareBackBtnHandler {        
+
+private ReactRootView mReactRootView;
+private ReactInstanceManager mReactInstanceManager;
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+
+    //创建一个ReactRootView，把它设置成Activity的主视图
+    mReactRootView = new ReactRootView(this);
+    mReactInstanceManager = ReactInstanceManager.builder()
+            .setApplication(getApplication())
+            .setBundleAssetName(&quot;index.android.bundle&quot;)
+            .setJSMainModuleName(&quot;index.android&quot;)
+            .addPackage(new MainReactPackage())
+            .setUseDeveloperSupport(BuildConfig.DEBUG)
+            .setInitialLifecycleState(LifecycleState.RESUMED)
+            .build();
+    mReactRootView.startReactApplication(mReactInstanceManager, &quot;androidwithreact&quot;, null);
+
+    setContentView(mReactRootView);
+
+
+}
+
+
+
+@Override
+public void invokeDefaultOnBackPressed() {
+    super.onBackPressed();
+}
+
+//传递一些Activity的生命周期事件到ReactInstanceManager，这是的JavaScript代码可以控制当前用户按下返回按钮的时候作何处理（譬如控制导航切换等等）。如果JavaScript端不处理相应的事件，你的invokeDefaultOnBackPressed方法会被调用。默认情况，这会直接结束你的Activity。
+@Override
+protected void onPause() {
+    super.onPause();
+
+    if (mReactInstanceManager != null) {
+        mReactInstanceManager.onHostPause();
+    }
+}
+
+@Override
+protected void onResume() {
+    super.onResume();
+
+    if (mReactInstanceManager != null) {
+        mReactInstanceManager.onHostResume(this,this);
+    }
+}
+
+@Override
+public void onBackPressed() {
+    //mReactInstanceManager.showDevOptionsDialog();
+    Toast.makeText(this, &quot;dianjialefanhuijian&quot;, Toast.LENGTH_SHORT).show();
+    if (mReactInstanceManager != null) {
+        mReactInstanceManager.onBackPressed();
+    } else {
+        super.onBackPressed();
+    }
+}
+
+//我们需要改动一下开发者菜单。默认情况下，任何开发者菜单都可以通过摇晃或者设备类触发，不过这对模拟器不是很有用。所以我们让它在按下Menu键的时候可以显示
+@Override
+public boolean onKeyUp(int keyCode, KeyEvent event) {
+    if (keyCode == KeyEvent.KEYCODE_MENU &amp;&amp; mReactInstanceManager != null) {
+
+        mReactInstanceManager.showDevOptionsDialog();
+        return true;
+        }
+    return super.onKeyUp(keyCode, event);
+    }
+}`
+</code></pre><h2 id="rn配置"><a href="#rn配置" class="headerlink" title="rn配置"></a>rn配置</h2><pre><code>1. npm init 新建一个rn项目 里面有package.json和node_modules文件夹
+2. 让我们回到androidwithreact文件夹下 将上述两个文件复制进来
+3. 复制一个index.android.js 文件进来最后一行修改，第一个参数要修改
+</code></pre><p><code>AppRegistry.registerComponent(&#39;androidwithreact&#39;, () =&gt; xxx);</code></p>
+<h2 id="报错问题"><a href="#报错问题" class="headerlink" title="报错问题"></a>报错问题</h2><pre><code>1. module 0 ...... 
+根据stackoverflow上的解决方法是package.json中的rn版本与as中配置的版本不匹配，
+建议换成最新的。
+
+
+2. v4包冲突 
+stackoverflow的解决方法是：在android目录下的build.gradle中添加
+</code></pre><p><code>android {
+    dexOptions {
+        preDexLibraries = false
+            }
+        }</code></p>
+<pre><code>3.bundle not  packaged  correctly
+切换到androidwithreact目录下，执行npm start开启服务
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/05/hello 亲爱的/" rel="next" title="hello world">
+                <i class="fa fa-chevron-left"></i> hello world
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/20/yeasterday-once-more/" rel="prev" title="yeasterday once more">
+                yeasterday once more <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="lc" />
+          <p class="site-author-name" itemprop="name">lc</p>
+          <p class="site-description motion-element" itemprop="description">自律带来力量</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#android项目配置"><span class="nav-number">2.</span> <span class="nav-text">android项目配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rn配置"><span class="nav-number">3.</span> <span class="nav-text">rn配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#报错问题"><span class="nav-number">4.</span> <span class="nav-text">报错问题</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lc</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
