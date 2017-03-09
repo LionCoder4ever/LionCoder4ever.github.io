@@ -5,10 +5,10 @@
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next muse use-motion" lang="">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
@@ -27,9 +27,12 @@
 
 
 
+
+
+
   
   
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -63,9 +66,9 @@
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="Hexo, NexT" />
@@ -77,50 +80,62 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
 
 
 
 
 
-<meta name="description" content="自律带来力量">
 <meta property="og:type" content="website">
-<meta property="og:title" content="小佳佳和我的blog">
-<meta property="og:url" content="https://lioncoder4ever.github.io/index.html">
-<meta property="og:site_name" content="小佳佳和我的blog">
-<meta property="og:description" content="自律带来力量">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Hexo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小佳佳和我的blog">
-<meta name="twitter:description" content="自律带来力量">
+<meta name="twitter:title" content="Hexo">
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Pisces',
-    sidebar: {"position":"left","display":"post"},
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: 0,
-      author: '博主'
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
 
 
 
+  <link rel="canonical" href="http://yoursite.com/"/>
 
-  <link rel="canonical" href="https://lioncoder4ever.github.io/"/>
 
-  <title> 小佳佳和我的blog </title>
+
+
+
+  <title> Hexo </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
 
   
+
+
+
+
 
 
 
@@ -142,25 +157,29 @@
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">小佳佳和我的blog</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
   </div>
-  <p class="site-subtitle"></p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
@@ -175,17 +194,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
+            Startseite
           </a>
         </li>
       
@@ -195,7 +204,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            归档
+            Archiv
           </a>
         </li>
       
@@ -205,7 +214,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            标签
+            Tags
           </a>
         </li>
       
@@ -216,6 +225,8 @@
 
   
 </nav>
+
+
 
  </div>
     </header>
@@ -230,13 +241,23 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/09/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
 
     
       <header class="post-header">
@@ -248,8 +269,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/09/20/yeasterday-once-more/" itemprop="url">
-                  yeasterday once more
+                <a class="post-title-link" href="/2017/03/09/hello-world/" itemprop="url">
+                  Hello World
                 </a>
               
             
@@ -258,13 +279,21 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-20T10:22:28+08:00" content="2016-09-20">
-              2016-09-20
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-09T11:05:40+08:00">
+                2017-03-09
+              </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -274,11 +303,14 @@
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
@@ -292,13 +324,15 @@
       
         
           
-            <p></p><h3>16-09-20</h3><br><a href="https://crazygui.wordpress.com/2010/09/05/high-quality-radial-gradient-in-android/" target="_blank" rel="external">https://crazygui.wordpress.com/2010/09/05/high-quality-radial-gradient-in-android/</a><br><br>when you want to style  android application with gradient color,follow the blog above<br><p></p>
-<p> <code>@Override
-public void onAttachedToWindow() {
-    super.onAttachedToWindow();
-    Window window = getWindow();
-    window.setFormat(PixelFormat.RGBA_8888);
-}</code></p>
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 
           
         
@@ -313,7 +347,10 @@ public void onAttachedToWindow() {
       
     </div>
 
+
     <footer class="post-footer">
+      
+
       
 
       
@@ -330,13 +367,23 @@ public void onAttachedToWindow() {
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/07/next/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
 
     
       <header class="post-header">
@@ -348,8 +395,8 @@ public void onAttachedToWindow() {
             
               
                 
-                <a class="post-title-link" href="/2016/09/13/已有android项目集成react-native/" itemprop="url">
-                  已有android项目集成react-native
+                <a class="post-title-link" href="/2016/12/07/next/" itemprop="url">
+                  Test for Hexo
                 </a>
               
             
@@ -358,15 +405,45 @@ public void onAttachedToWindow() {
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-13T11:33:12+08:00" content="2016-09-13">
-              2016-09-13
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-07T20:46:25+08:00">
+                2016-12-07
+              </time>
+            
+
+            
+
+            
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Diary/" itemprop="url" rel="index">
+                    <span itemprop="name">Diary</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -374,11 +451,14 @@ public void onAttachedToWindow() {
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
@@ -392,124 +472,8 @@ public void onAttachedToWindow() {
       
         
           
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><pre><code>为了配合运营和市场伙伴的工作,app中一些模块或界面需要频繁变动。  
-于Android，可以使用webview,  热更新和rn等方法。
-其中webview  较为常规, 但加载速度很慢(好讨厌的感觉),
-热更新还没接触(部分大厂在用),rn的话看起来很美（facebook出品,github
- star多）,所以我选择rn进行尝试，此文是我集成rn的一个总结。
-</code></pre><h2 id="android项目配置"><a href="#android项目配置" class="headerlink" title="android项目配置"></a>android项目配置</h2><pre><code>预设读者已经成功配置rn，as,并熟悉as工程下文件目录，遇到问题可以google。
-1. 新建文件夹，命名为androidwithreact
-2. 进入androidwithreact文件夹，新建android文件夹
-3. 将原有的android项目复制到android文件夹下
-4. 修改android/build.gradle文件,配置rn版本
-</code></pre><p><code>allprojects {
-    repositories {
-        jcenter()
-        mavenLocal()
-        maven {
-            url &quot;$rootDir/../node_modules/react-native/android&quot;
-            }
-        }
-    }</code></p>
-<pre><code>5. 修改app(module)下build.gradle 在dependencies中添加
-</code></pre><p><code>compile &#39;com.facebook.react:react-native:+&#39;</code></p>
-<pre><code>6. 在manifest文件中添加一下代码方便进入开发者模式
-</code></pre><p><code>&lt;activity android:name=&quot;com.facebook.react.devsupport.DevSettingsActivity&quot; /&gt;</code></p>
-<pre><code>7. 新建activity作为rn呈现的载体（个人理解）
-public class ReactActivity extends AppCompatActivity implements DefaultHardwareBackBtnHandler {        
+            <p>Hexo Test.</p>
 
-private ReactRootView mReactRootView;
-private ReactInstanceManager mReactInstanceManager;
-
-@Override
-protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
-
-    //创建一个ReactRootView，把它设置成Activity的主视图
-    mReactRootView = new ReactRootView(this);
-    mReactInstanceManager = ReactInstanceManager.builder()
-            .setApplication(getApplication())
-            .setBundleAssetName(&quot;index.android.bundle&quot;)
-            .setJSMainModuleName(&quot;index.android&quot;)
-            .addPackage(new MainReactPackage())
-            .setUseDeveloperSupport(BuildConfig.DEBUG)
-            .setInitialLifecycleState(LifecycleState.RESUMED)
-            .build();
-    mReactRootView.startReactApplication(mReactInstanceManager, &quot;androidwithreact&quot;, null);
-
-    setContentView(mReactRootView);
-
-
-}
-
-
-
-@Override
-public void invokeDefaultOnBackPressed() {
-    super.onBackPressed();
-}
-
-//传递一些Activity的生命周期事件到ReactInstanceManager，这是的JavaScript代码可以控制当前用户按下返回按钮的时候作何处理（譬如控制导航切换等等）。如果JavaScript端不处理相应的事件，你的invokeDefaultOnBackPressed方法会被调用。默认情况，这会直接结束你的Activity。
-@Override
-protected void onPause() {
-    super.onPause();
-
-    if (mReactInstanceManager != null) {
-        mReactInstanceManager.onHostPause();
-    }
-}
-
-@Override
-protected void onResume() {
-    super.onResume();
-
-    if (mReactInstanceManager != null) {
-        mReactInstanceManager.onHostResume(this,this);
-    }
-}
-
-@Override
-public void onBackPressed() {
-    //mReactInstanceManager.showDevOptionsDialog();
-    Toast.makeText(this, &quot;dianjialefanhuijian&quot;, Toast.LENGTH_SHORT).show();
-    if (mReactInstanceManager != null) {
-        mReactInstanceManager.onBackPressed();
-    } else {
-        super.onBackPressed();
-    }
-}
-
-//我们需要改动一下开发者菜单。默认情况下，任何开发者菜单都可以通过摇晃或者设备类触发，不过这对模拟器不是很有用。所以我们让它在按下Menu键的时候可以显示
-@Override
-public boolean onKeyUp(int keyCode, KeyEvent event) {
-    if (keyCode == KeyEvent.KEYCODE_MENU &amp;&amp; mReactInstanceManager != null) {
-
-        mReactInstanceManager.showDevOptionsDialog();
-        return true;
-        }
-    return super.onKeyUp(keyCode, event);
-    }
-}`
-</code></pre><h2 id="rn配置"><a href="#rn配置" class="headerlink" title="rn配置"></a>rn配置</h2><pre><code>1. npm init 新建一个rn项目 里面有package.json和node_modules文件夹
-2. 让我们回到androidwithreact文件夹下 将上述两个文件复制进来
-3. 复制一个index.android.js 文件进来最后一行修改，第一个参数要修改
-</code></pre><p><code>AppRegistry.registerComponent(&#39;androidwithreact&#39;, () =&gt; xxx);</code></p>
-<h2 id="报错问题"><a href="#报错问题" class="headerlink" title="报错问题"></a>报错问题</h2><pre><code>1. module 0 ...... 
-根据stackoverflow上的解决方法是package.json中的rn版本与as中配置的版本不匹配，
-建议换成最新的。
-
-
-2. v4包冲突 
-stackoverflow的解决方法是：在android目录下的build.gradle中添加
-</code></pre><p><code>android {
-    dexOptions {
-        preDexLibraries = false
-            }
-        }</code></p>
-<pre><code>3.bundle not  packaged  correctly
-切换到androidwithreact目录下，执行npm start开启服务
-</code></pre>
           
         
       
@@ -522,102 +486,11 @@ stackoverflow的解决方法是：在android目录下的build.gradle中添加
     <div>
       
     </div>
+
 
     <footer class="post-footer">
       
 
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/05/hello 亲爱的/" itemprop="url">
-                  hello world
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-05T17:33:41+08:00" content="2016-09-05">
-              2016-09-05
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>邂逅在乌鲁木齐中路与五原路交叉口～</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
       
 
       
@@ -635,7 +508,7 @@ stackoverflow的解决方法是：在android目录下的build.gradle中添加
 
   
 
-
+          
           </div>
           
 
@@ -661,24 +534,47 @@ stackoverflow的解决方法是：在android目录下的build.gradle中添加
 
       
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.png"
-               alt="lc" />
-          <p class="site-author-name" itemprop="name">lc</p>
-          <p class="site-description motion-element" itemprop="description">自律带来力量</p>
+               src="/images/avatar.gif"
+               alt="John Doe" />
+          <p class="site-author-name" itemprop="name">John Doe</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
         </div>
         <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">3</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
 
           
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">Artikel</span>
+              </a>
+            </div>
+          
 
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">Kategorien</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">Tags</span>
+              
+            </div>
           
 
         </nav>
@@ -695,7 +591,12 @@ stackoverflow的解决方法是：在android目录下的build.gradle中添加
         
         
 
+        
+
+
       </section>
+
+      
 
       
 
@@ -712,23 +613,25 @@ stackoverflow的解决方法是：在android目录下的build.gradle中添加
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">lc</span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
 </div>
 
+
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
-  主题 -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Muse
   </a>
 </div>
+
 
         
 
@@ -736,9 +639,13 @@ stackoverflow的解决方法是：在android目录下的build.gradle中添加
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
   </div>
 
   
@@ -761,50 +668,44 @@ stackoverflow的解决方法是：在android目录下的build.gradle中添加
 
 
 
-  
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
   
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
   
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
   
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
-
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
   
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
-
-
+  
 
   
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
 
 
 
@@ -817,12 +718,39 @@ stackoverflow的解决方法是：在android目录下的build.gradle中添加
 
 
 
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
   
   
 
   
 
   
+
+  
+
+  
+
 
   
 
