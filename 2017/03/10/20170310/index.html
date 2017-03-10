@@ -87,21 +87,21 @@
 
 
 
-<meta name="description" content="#前言笔者代码中使用了vue和jquery,以下代码片段中的this有时指向的是vue实例对象
-#修改显示内容zTrees 初始化代码如下,第二个 param 是配置选项
+<meta name="description" content="前言笔者代码中使用了vue和jquery,以下代码片段中的this有时指向的是vue实例对象
+修改显示内容zTrees 初始化代码如下,第二个 param 是配置选项
 $.fn.zTree.init($(&quot;#treeDemo&quot;), setting, this.zNodes);">
 <meta property="og:type" content="article">
 <meta property="og:title" content="zTree 修改显示内容以及节点增删改操作">
 <meta property="og:url" content="https://lioncoder4ever.github.io/2017/03/10/20170310/index.html">
 <meta property="og:site_name" content="德艺双馨cocoding">
-<meta property="og:description" content="#前言笔者代码中使用了vue和jquery,以下代码片段中的this有时指向的是vue实例对象
-#修改显示内容zTrees 初始化代码如下,第二个 param 是配置选项
+<meta property="og:description" content="前言笔者代码中使用了vue和jquery,以下代码片段中的this有时指向的是vue实例对象
+修改显示内容zTrees 初始化代码如下,第二个 param 是配置选项
 $.fn.zTree.init($(&quot;#treeDemo&quot;), setting, this.zNodes);">
-<meta property="og:updated_time" content="2017-03-10T09:29:31.270Z">
+<meta property="og:updated_time" content="2017-03-10T09:34:17.040Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="zTree 修改显示内容以及节点增删改操作">
-<meta name="twitter:description" content="#前言笔者代码中使用了vue和jquery,以下代码片段中的this有时指向的是vue实例对象
-#修改显示内容zTrees 初始化代码如下,第二个 param 是配置选项
+<meta name="twitter:description" content="前言笔者代码中使用了vue和jquery,以下代码片段中的this有时指向的是vue实例对象
+修改显示内容zTrees 初始化代码如下,第二个 param 是配置选项
 $.fn.zTree.init($(&quot;#treeDemo&quot;), setting, this.zNodes);">
 
 
@@ -359,8 +359,8 @@ $.fn.zTree.init($(&quot;#treeDemo&quot;), setting, this.zNodes);">
       
 
       
-        <p>#前言<br>笔者代码中使用了vue和jquery,以下代码片段中的this有时指向的是vue实例对象</p>
-<p>#修改显示内容<br>zTrees 初始化代码如下,第二个 param 是配置选项</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>笔者代码中使用了vue和jquery,以下代码片段中的this有时指向的是vue实例对象</p>
+<h1 id="修改显示内容"><a href="#修改显示内容" class="headerlink" title="修改显示内容"></a>修改显示内容</h1><p>zTrees 初始化代码如下,第二个 param 是配置选项</p>
 <pre><code>$.fn.zTree.init($("#treeDemo"), setting, this.zNodes);
 </code></pre>
 <a id="more"></a>v
@@ -382,8 +382,7 @@ $.fn.zTree.init($(&quot;#treeDemo&quot;), setting, this.zNodes);">
         },
 </code></pre>
 
-<p>#节点增删改操作</p>
-<p>##以更改节点内容为例<br>为了取到当前操作节点的数据,需要在 setting 中 callback 对象上加上触发回调的方法,例如onRightClick</p>
+<h1 id="节点增删改操作"><a href="#节点增删改操作" class="headerlink" title="节点增删改操作"></a>节点增删改操作</h1><h2 id="以更改节点内容为例"><a href="#以更改节点内容为例" class="headerlink" title="以更改节点内容为例"></a>以更改节点内容为例</h2><p>为了取到当前操作节点的数据,需要在 setting 中 callback 对象上加上触发回调的方法,例如onRightClick</p>
 <pre><code> callback: { 
     onRightClick: this.OnRightClick,
                 }
@@ -505,8 +504,17 @@ $.fn.zTree.init($(&quot;#treeDemo&quot;), setting, this.zNodes);">
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://tva4.sinaimg.cn/crop.0.0.996.996.180/80b4e747jw8f2wiqhnqfsj20ro0rp7am.jpg"
@@ -568,6 +576,22 @@ $.fn.zTree.init($(&quot;#treeDemo&quot;), setting, this.zNodes);">
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改显示内容"><span class="nav-number">2.</span> <span class="nav-text">修改显示内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#节点增删改操作"><span class="nav-number">3.</span> <span class="nav-text">节点增删改操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#以更改节点内容为例"><span class="nav-number">3.1.</span> <span class="nav-text">以更改节点内容为例</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
