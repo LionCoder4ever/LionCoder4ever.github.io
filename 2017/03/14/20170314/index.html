@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Web,vue,develop," />
+  <meta name="keywords" content="develop,Web,vue," />
 
 
 
@@ -93,7 +93,7 @@
 <meta property="og:url" content="https://lioncoder4ever.github.io/2017/03/14/20170314/index.html">
 <meta property="og:site_name" content="德艺双馨cocoding">
 <meta property="og:description" content="前言常见的两列布局,之前笔者用的 frameset 做,一个页面上有三个 frame(左,右,头部),体验很不好,因为部分代码使用了 Vue ,所以结合 Vue-router 来实现路由,其中也用到了一点点 Vue 自定义组件的内容.当然读者也可以选择其他更轻量级的路由库.">
-<meta property="og:updated_time" content="2017-03-14T02:59:51.506Z">
+<meta property="og:updated_time" content="2017-03-14T08:27:55.283Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue-router + iframe 实现后台当前页面刷新">
 <meta name="twitter:description" content="前言常见的两列布局,之前笔者用的 frameset 做,一个页面上有三个 frame(左,右,头部),体验很不好,因为部分代码使用了 Vue ,所以结合 Vue-router 来实现路由,其中也用到了一点点 Vue 自定义组件的内容.当然读者也可以选择其他更轻量级的路由库.">
@@ -358,8 +358,8 @@
 <p>定义 iframe 组件 frameCompent,这里用 :src 来绑定 iframe 的 url 地址,因为我们要将路径传递给组件, $route.path得到的就是这个路径的字符串形式,注意在 Vue 中这个 $route.path 可以用模板内的表达式进行操作,例如 split,reverse </p>
 <pre>
 <code>
-const frameCompent = { template: <`iframe` :src="$route.path" style="xxx">' }
-</`iframe`></code>
+const frameCompent = { template: &lt;iframe&gt; :src="$route.path" style="xxx">' }
+</code>
 </pre>
 
 
@@ -413,11 +413,11 @@ const app = new Vue({
       
         <div class="post-tags">
           
+            <a href="/tags/develop/" rel="tag"># develop</a>
+          
             <a href="/tags/Web/" rel="tag"># Web</a>
           
             <a href="/tags/vue/" rel="tag"># vue</a>
-          
-            <a href="/tags/develop/" rel="tag"># develop</a>
           
         </div>
       
