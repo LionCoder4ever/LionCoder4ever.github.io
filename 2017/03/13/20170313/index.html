@@ -93,7 +93,7 @@
 <meta property="og:url" content="https://lioncoder4ever.github.io/2017/03/13/20170313/index.html">
 <meta property="og:site_name" content="德艺双馨cocoding">
 <meta property="og:description" content="前言当前系统有几个页面用到了大量的表单,要先从后台取出数据,然后填充表单,最后异步提交,用 jquery 写了很多代码,现在用 Vue 重构,MVVM 框架,展现你真正的实力吧!">
-<meta property="og:updated_time" content="2017-03-14T08:33:47.098Z">
+<meta property="og:updated_time" content="2017-03-14T08:38:18.184Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用 Vue 重构表单页面">
 <meta name="twitter:description" content="前言当前系统有几个页面用到了大量的表单,要先从后台取出数据,然后填充表单,最后异步提交,用 jquery 写了很多代码,现在用 Vue 重构,MVVM 框架,展现你真正的实力吧!">
@@ -354,7 +354,7 @@
 
       
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>当前系统有几个页面用到了大量的表单,要先从后台取出数据,然后填充表单,最后异步提交,用 jquery 写了很多代码,现在用 Vue 重构,MVVM 框架,展现你真正的实力吧!<a id="more"></a></p>
-<h1 id="数据单向流动"><a href="#数据单向流动" class="headerlink" title="数据单向流动"></a>数据单向流动</h1><p>将 input 标签用 v-model 绑定到 Vue 的 data 对象上,例如下面的 select 标签.在取到数据后,将数据传递给 toastoptions ,在 option 标签中使用<br>v-for 指令循环创建 <option> 内容.因为数据绑定,Vue 实例的 toasts 对象值就是我们选择的 option value ,当我们需要改变 html 内容时,<br>只需要改变data 即可,变动会被映射到 绑定的视图中</option></p>
+<h1 id="数据单向流动"><a href="#数据单向流动" class="headerlink" title="数据单向流动"></a>数据单向流动</h1><p>将 input 标签用 v-model 绑定到 Vue 的 data 对象上,例如下面的 select 标签.在取到数据后,将数据传递给 toastoptions ,在 option 标签中使用<br>v-for 指令循环创建 <option\> 内容.因为数据绑定,Vue 实例的 toasts 对象值就是我们选择的 option value ,当我们需要改变 html 内容时, 只需要改变data 即可,变动会被映射到 绑定的视图中</option\></p>
 <pre>
 <code>
 &lt;select class="select" name="toasts"
