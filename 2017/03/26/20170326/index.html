@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="develop,Web," />
+  <meta name="keywords" content="develop,Web,spring," />
 
 
 
@@ -87,22 +87,55 @@
 
 
 
-<meta name="description" content="前言笔者代码中使用了vue和jquery,以下代码片段中的this有时指向的是vue实例对象
-修改显示内容zTrees 初始化代码如下,第二个 param 是配置选项
-$.fn.zTree.init($(&quot;#treeDemo&quot;), setting, this.zNodes);">
+<meta name="description" content="(随性)翻译spring官网上的文章
+使用spring搭建一个 RESTful web服务我们最后构建出的项目可以接收一个类似于
+
+http://localhost:8080/greeting
+
+ HTTP GET 请求 
+我们的应用会返回一个 JSON 数据给它
+
+{&quot;id&quot;:1,&quot;content&quot;:&quot;Hello, World!&quot;}
+
+你可以添加参数来定制一个 HTTP 请求
+ 像
+
+http:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="zTree 修改显示内容以及节点增删改操作">
-<meta property="og:url" content="https://lioncoder4ever.github.io/2017/03/10/20170310/index.html">
+<meta property="og:title" content="spring guide 翻译[1]">
+<meta property="og:url" content="https://lioncoder4ever.github.io/2017/03/26/20170326/index.html">
 <meta property="og:site_name" content="德艺双馨cocoding">
-<meta property="og:description" content="前言笔者代码中使用了vue和jquery,以下代码片段中的this有时指向的是vue实例对象
-修改显示内容zTrees 初始化代码如下,第二个 param 是配置选项
-$.fn.zTree.init($(&quot;#treeDemo&quot;), setting, this.zNodes);">
-<meta property="og:updated_time" content="2017-03-14T02:55:52.504Z">
+<meta property="og:description" content="(随性)翻译spring官网上的文章
+使用spring搭建一个 RESTful web服务我们最后构建出的项目可以接收一个类似于
+
+http://localhost:8080/greeting
+
+ HTTP GET 请求 
+我们的应用会返回一个 JSON 数据给它
+
+{&quot;id&quot;:1,&quot;content&quot;:&quot;Hello, World!&quot;}
+
+你可以添加参数来定制一个 HTTP 请求
+ 像
+
+http:">
+<meta property="og:updated_time" content="2017-03-27T05:18:03.919Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zTree 修改显示内容以及节点增删改操作">
-<meta name="twitter:description" content="前言笔者代码中使用了vue和jquery,以下代码片段中的this有时指向的是vue实例对象
-修改显示内容zTrees 初始化代码如下,第二个 param 是配置选项
-$.fn.zTree.init($(&quot;#treeDemo&quot;), setting, this.zNodes);">
+<meta name="twitter:title" content="spring guide 翻译[1]">
+<meta name="twitter:description" content="(随性)翻译spring官网上的文章
+使用spring搭建一个 RESTful web服务我们最后构建出的项目可以接收一个类似于
+
+http://localhost:8080/greeting
+
+ HTTP GET 请求 
+我们的应用会返回一个 JSON 数据给它
+
+{&quot;id&quot;:1,&quot;content&quot;:&quot;Hello, World!&quot;}
+
+你可以添加参数来定制一个 HTTP 请求
+ 像
+
+http:">
 
 
 
@@ -130,13 +163,13 @@ $.fn.zTree.init($(&quot;#treeDemo&quot;), setting, this.zNodes);">
 
 
 
-  <link rel="canonical" href="https://lioncoder4ever.github.io/2017/03/10/20170310/"/>
+  <link rel="canonical" href="https://lioncoder4ever.github.io/2017/03/26/20170326/"/>
 
 
 
 
 
-  <title> zTree 修改显示内容以及节点增删改操作 | 德艺双馨cocoding </title>
+  <title> spring guide 翻译[1] | 德艺双馨cocoding </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -255,7 +288,7 @@ $.fn.zTree.init($(&quot;#treeDemo&quot;), setting, this.zNodes);">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://lioncoder4ever.github.io/2017/03/10/20170310/">
+    <link itemprop="mainEntityOfPage" href="https://lioncoder4ever.github.io/2017/03/26/20170326/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LionCoder4ever">
@@ -276,7 +309,7 @@ $.fn.zTree.init($(&quot;#treeDemo&quot;), setting, this.zNodes);">
             
             
               
-                zTree 修改显示内容以及节点增删改操作
+                spring guide 翻译[1]
               
             
           </h1>
@@ -291,8 +324,8 @@ $.fn.zTree.init($(&quot;#treeDemo&quot;), setting, this.zNodes);">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-10T10:22:28+08:00">
-                2017-03-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-26T22:51:25+08:00">
+                2017-03-26
               </time>
             
 
@@ -332,8 +365,8 @@ $.fn.zTree.init($(&quot;#treeDemo&quot;), setting, this.zNodes);">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/10/20170310/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/10/20170310/" itemprop="commentCount"></span>
+                <a href="/2017/03/26/20170326/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/26/20170326/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -359,54 +392,120 @@ $.fn.zTree.init($(&quot;#treeDemo&quot;), setting, this.zNodes);">
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>笔者代码中使用了vue和jquery,以下代码片段中的this有时指向的是vue实例对象</p>
-<h1 id="修改显示内容"><a href="#修改显示内容" class="headerlink" title="修改显示内容"></a>修改显示内容</h1><p>zTrees 初始化代码如下,第二个 param 是配置选项</p>
-<pre><code>$.fn.zTree.init($("#treeDemo"), setting, this.zNodes);
+        <p>(随性)翻译spring官网上的文章</p>
+<h1 id="使用spring搭建一个-RESTful-web服务"><a href="#使用spring搭建一个-RESTful-web服务" class="headerlink" title="使用spring搭建一个 RESTful web服务"></a>使用spring搭建一个 RESTful web服务</h1><p>我们最后构建出的项目可以接收一个类似于</p>
+<pre><code>
+http://localhost:8080/greeting
+</code></pre>
+ HTTP GET 请求 
+我们的应用会返回一个 JSON 数据给它
+<pre><code>
+{"id":1,"content":"Hello, World!"}
+</code></pre>
+你可以添加参数来定制一个 HTTP 请求
+ 像
+<pre><code>
+http://localhost:8080/greeting?name=User
+</code></pre>这样
+这个name参数值会覆盖掉应用默认返回的 World
+<pre><code>
+{"id":1,"content":"Hello, User!"}
 </code></pre>
 <a id="more"></a>
-在 setting 中 view 对象上加上 addDiyDom 方法
-<pre><code>var setting={
-        view: {
-            addDiyDom: this.addDiyDom
-              },
-        }
+
+
+首先借助spring构建工具，新建一个项目。
+先理清这个应用的思路
+我们接收一个 get 请求 ，这个请求有一个叫做 name 的可选参数
+get 请求会返回一个 200 OK 和 JSON 数据
+<pre><code>
+{
+    "id": 1,
+    "content": "Hello, World!"
+}
+</code></pre>
+这个 id 字段 是请求的 唯一标志， content字段 是返回的文字内容
+所以我们需要新建一个 POJO（Plain old java object）来返回它
+这个pojo是下面这个样子
+<pre><code>
+public class Greeting {
+
+    private final long id;
+    private final String content;
+
+    public Greeting(long id, String content) {
+        this.id = id;
+        this.content = content;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getContent() {
+        return content;
+    }
+}
+</code></pre>
+spring 会使用 jackson json库 自动将 Greeting对象转变成 json数据
+
+接下面我们要创建 controller 来处理请求
+spring使用 @RestController 注解 controller
+<pre><code>
+import java.util.concurrent.atomic.AtomicLong;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class GreetingController {
+
+    private static final String template = "Hello, %s!";
+    private final AtomicLong counter = new AtomicLong();
+
+    @RequestMapping("/greeting")
+    public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
+        return new Greeting(counter.incrementAndGet(),
+                            String.format(template, name));
+    }
+}
+</code></pre>
+这个 controller代码直观且简单，但是它简约而不简单
+一步步来看它
+@RequestMapping 注解 确保 /greeting 请求 会被 greeting方法处理
+@RequestMapping 注解会匹配所有的 HTTP请求类型，不管你是 GET 还是 PUT 还是 POST
+当然你也可以使用 @RequestMapping(method=GET) 来指定处理 的HTTP请求类型
+
+@RequestParam 注解将 name参数的值 绑定给name字段
+name参数是可选的，如果它缺失,defaultValue 'world'就会被使用
+
+和 传统的 MVC controller 不同的是， 我们的 RESTful web应用不会结果展示成 html 而是返回一个 Greeting 对象， 这个对象的数据会被直接以JSON的形式返回
+
+@RestController 是spring 4推出的注解，
+是 @Controller 和 @ResponseBody 两个注解的结合使用
+
+你不需要手动 将 Greeting对象 转变成json
+因为spring的MappingJackson2HttpMessageConverter已经自动完成这件事了
+
+接下来 让我们运行项目 
+在项目自动生成的Application中
+我们看到它被 SpringBootApplication注解
+@SpringBootApplication注解 是一个便利的注解 包含以下 4种注解的功能
+@Configuration 
+@EnableAutoConfiguration 告诉 spring boot 加载各种配置
+@EnableWebMvc 将我们的应用标记成一个 网络应用 这样应用的一些关键内容例如 DispatcherServlet 才会被激活
+@ComponentScan告诉 spring寻找其他"部分"（我们自己编写的代码）
+
+到目前为止 我们还没有配置过一行 xml
+点击 run 运行项目，
+访问 http://localhost:8080/greeting,
+你会看到
+<pre><code>
+{"id":1,"content":"Hello, World!"}
 </code></pre>
 
-<p>在 addDiyDom 方法中可以对内容进行修改 </p>
-<pre><code>var setting={
-        addDiyDom :function(treeId, treeNode) {
-            var spaceWidth = 5;
-            var switchObj = $("#" + treeNode.tId + "_switch");
-            var spaceStr = "html代码块,构建出想要的样式,图片或文字";
-            switchObj.before(spaceStr);
-        },
-</code></pre>
-
-<h1 id="节点增删改操作"><a href="#节点增删改操作" class="headerlink" title="节点增删改操作"></a>节点增删改操作</h1><h2 id="以更改节点内容为例"><a href="#以更改节点内容为例" class="headerlink" title="以更改节点内容为例"></a>以更改节点内容为例</h2><p>为了取到当前操作节点的数据,需要在 setting 中 callback 对象上加上触发回调的方法,例如onRightClick</p>
-<pre><code> callback: { 
-    onRightClick: this.OnRightClick,
-                }
-</code></pre>
-
-<p>在 onRightClick 方法中调用 treeObj 对象的 selectNode 方法(用来确定操作的节点对象)</p>
-<pre><code>OnRightClick:function OnRightClick(event, treeId, treeNode) {
-        if (treeNode && !treeNode.noR) {
-                    this.treeObj.selectNode(treeNode);
-                }
-
-            }
-</code></pre>
-
-<p>确定了要操作的节点对象,就可以用 getSelectedNodes()[0] 取到,进而修改节点的属性,最后别忘了 update</p>
-<pre><code>alertTreeNode:function (url) {
-                   var oldNode =  this.treeObj.getSelectedNodes()[0];
-                    oldNode.name = "图片";
-                    oldNode.imgurl = url;
-            this.treeObj.updateNode(oldNode);        
-                }
-</code></pre>
-
-
+<p>访问 <a href="http://localhost:8080/greeting?name=User" target="_blank" rel="external">http://localhost:8080/greeting?name=User</a>. </p>
+<p><pre><code><br>{“id”:2,”content”:”Hello, User!”}<br></code></pre><br>你会发现我们的 id 值 增加了，说明这两次请求访问的是同一个<br>GreetingController(–!)</p>
 
       
     </div>
@@ -434,6 +533,8 @@ $.fn.zTree.init($(&quot;#treeDemo&quot;), setting, this.zNodes);">
           
             <a href="/tags/Web/" rel="tag"># Web</a>
           
+            <a href="/tags/spring/" rel="tag"># spring</a>
+          
         </div>
       
 
@@ -445,8 +546,8 @@ $.fn.zTree.init($(&quot;#treeDemo&quot;), setting, this.zNodes);">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/20/20160920/" rel="next" title="Android改善渐变色背景的显示效果">
-                <i class="fa fa-chevron-left"></i> Android改善渐变色背景的显示效果
+              <a href="/2017/03/14/20170314/" rel="next" title="Vue-router + iframe 实现后台当前页面刷新">
+                <i class="fa fa-chevron-left"></i> Vue-router + iframe 实现后台当前页面刷新
               </a>
             
           </div>
@@ -454,10 +555,6 @@ $.fn.zTree.init($(&quot;#treeDemo&quot;), setting, this.zNodes);">
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/13/20170313/" rel="prev" title="使用 Vue 重构表单页面">
-                使用 Vue 重构表单页面 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -483,8 +580,8 @@ $.fn.zTree.init($(&quot;#treeDemo&quot;), setting, this.zNodes);">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/10/20170310/"
-           data-title="zTree 修改显示内容以及节点增删改操作" data-url="https://lioncoder4ever.github.io/2017/03/10/20170310/">
+      <div class="ds-thread" data-thread-key="2017/03/26/20170326/"
+           data-title="spring guide 翻译[1]" data-url="https://lioncoder4ever.github.io/2017/03/26/20170326/">
       </div>
     
   </div>
@@ -590,7 +687,7 @@ $.fn.zTree.init($(&quot;#treeDemo&quot;), setting, this.zNodes);">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改显示内容"><span class="nav-number">2.</span> <span class="nav-text">修改显示内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#节点增删改操作"><span class="nav-number">3.</span> <span class="nav-text">节点增删改操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#以更改节点内容为例"><span class="nav-number">3.1.</span> <span class="nav-text">以更改节点内容为例</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用spring搭建一个-RESTful-web服务"><span class="nav-number">1.</span> <span class="nav-text">使用spring搭建一个 RESTful web服务</span></a></li></ol></div>
             
 
           </div>
